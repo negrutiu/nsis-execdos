@@ -73,7 +73,7 @@ BEGIN
             VALUE "OriginalFilename", "ExecDos.dll"
             VALUE "ProductName", "ExecDos NSIS plug-in"
             VALUE "ProductVersion", "1.0.1.3"
-			VALUE "LegalTrademarks", "Built by Marius Megrutiu (https://github.com/negrutiu/nsis)"
+			VALUE "LegalTrademarks", "https://github.com/negrutiu/nsis-execdos"
         END
     END
     BLOCK "VarFileInfo"
