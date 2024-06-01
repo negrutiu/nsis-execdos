@@ -13,12 +13,10 @@ libs = Split("""
 	user32
 """)
 
-examples = []
-
 docs = Split("""
 	Readme.txt
 """)
 
 Import('BuildPlugin')
 
-BuildPlugin(target, files, libs, examples, docs, res = resources)
+BuildPlugin(target, files, libs, docs = docs, res = resources)
