@@ -13,7 +13,7 @@ libs = Split("""
 	user32
 """)
 
-examples = ''
+examples = []
 
 docs = Split("""
 	Readme.txt
