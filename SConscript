@@ -1,11 +1,11 @@
 target = 'ExecDos'
 
 files = Split("""
-	execdos.c
+	execDos.c
 """)
 
 resources = Split("""
-	execdos.rc
+	execDos.rc
 """)
 
 libs = Split("""
