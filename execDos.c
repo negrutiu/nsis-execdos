@@ -35,10 +35,10 @@
 * Stuart 'Afrow UK' Welch, afrowuk@afrowsoft.co.uk
 **************************************************/
 
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-#include <fcntl.h>
 #include <commctrl.h>
-#include "nsis\pluginapi.h"
+#include <nsis\pluginapi.h>
 
 #define NSISFUNC(name) void __declspec(dllexport) name(HWND hWndParent, int string_size, TCHAR* variables, stack_t** stacktop, extra_parameters* extra)
 
