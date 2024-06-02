@@ -37,9 +37,6 @@
 
 #include <windows.h>
 #include <fcntl.h>
-#include <stdio.h>
-#include <io.h>
-#include <sys\stat.h>
 #include "COMMCTRL.H"
 #include "nsis\pluginapi.h"
 
