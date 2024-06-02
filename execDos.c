@@ -35,9 +35,9 @@
 * Stuart 'Afrow UK' Welch, afrowuk@afrowsoft.co.uk
 **************************************************/
 
-#include <Windows.h>
+#include <windows.h>
 #include <fcntl.h>
-#include <CommCtrl.h>
+#include <commctrl.h>
 #include "nsis\pluginapi.h"
 
 #define NSISFUNC(name) void __declspec(dllexport) name(HWND hWndParent, int string_size, TCHAR* variables, stack_t** stacktop, extra_parameters* extra)
