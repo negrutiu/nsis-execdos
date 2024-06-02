@@ -360,7 +360,7 @@ NSISFUNC(wait)
   HANDLE hThread;
 
   popstring(exitCode);
-  hThread = (HANDLE)myatou(exitCode);
+  hThread = ULongToHandle(myatou(exitCode));
 /* push to stack application' exit code or -1 or "still_running" */
   if(hThread != NULL)
   {
@@ -387,7 +387,7 @@ NSISFUNC(isdone)
 
 // get thread handle from stack
   popstring(s);
-  hThread = (HANDLE)myatou(s);
+  hThread = ULongToHandle(myatou(s));
 // is it running? 1 == yes, 0 == exited, -1 == error 
   if(hThread != NULL)
     pushstring(WaitForSingleObject(hThread, 0) == WAIT_TIMEOUT ? TEXT("0") : TEXT("1"));
@@ -450,7 +450,7 @@ NSISFUNC(exec)
       ptp->target = OUT_WINDOW;
       if(hWndParent &&
         (childwnd = FindWindowEx(hWndParent, NULL, TEXT("#32770"), NULL)) != NULL)
-        wsprintf(ptp->logFile, TEXT("%d"), (int)GetDlgItem(childwnd, 0x3f8));
+        wsprintf(ptp->logFile, TEXT("%zu"), GetDlgItem(childwnd, 0x3f8));
     }
     else if((p = my_strchr(ptp->dosExec, TEXT('='))) != NULL)
     {
@@ -471,7 +471,7 @@ NSISFUNC(exec)
 // output window was kept in string. Let's handle it once
   if(ptp->target == OUT_WINDOW)
   {
-    ptp->hOut = (HWND)myatou(ptp->logFile);
+    ptp->hOut = ULongToPtr(myatou(ptp->logFile));
     GetClassName(ptp->hOut, ptp->logFile, string_size);
   }
   if(ptp->target == OUT_FUNCTION)
